@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.案例_地区查询</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<div>
+    <form action="">
+        <span>省份名字</span></form><br>
+        <input type="text" class="pname"><br>
+        <span>城市名字</span><br>
+        <input type="text" class="cname"><br>
+        <button type="submit" class="btn">查询</button><br>
+    </form>
+</div>
+<div>
+    <span class="list">地区列表:</span>
+</div>
+
+<body>
+    <script>
+        document.querySelector('.btn').addEventListener('click', (e)=> {
+            e.preventDefault();
+            const pname = document.querySelector('.pname').value
+            const cname = document.querySelector('.cname').value
+            axios({
+                url: 'https://hmajax.itheima.net/api/area',
+                params: {
+                    pname,
+                    cname
+                }
+            }).then(result => {
+                result.data.list.forEach(element => {
+                    const span = document.createElement('span')
+                    span.innerHTML = '</br>' + element
+                    document.querySelector('.list').appendChild(span)
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>
