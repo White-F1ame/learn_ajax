@@ -4,7 +4,7 @@
 > AJAX是异步的[[JavaScript]]和[[XML]]（**A**synchronous **J**avaScript **A**nd **X**ML）。简单点说，就是==使用XMLHttpRequest对象与服务器通信==。它可以使用JSON，XML，HTML和text文本等格式发送和接受数据。AJAX最吸引人的就是它的“异步”特性，也就是说它可以在不重新刷新页面的情况下与服务器通信，交换数据或更新页面
 
 **概念：** AJAX是浏览器与服务器进行==数据通信==的技术
-![[Pasted image 20240417172507.png]]
+![[0101.png]]
 
 ## 怎么用AJAX？
 1. 先使用[[axios]]库，与服务器进行==数据通信== 
