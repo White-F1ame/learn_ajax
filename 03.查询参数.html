@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.查询参数</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        .city {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        城市列表：https://hmajax.itheima.net/api/city
+        参数名：pname
+        值：省份名字
+     -->
+    <p class="title">城市列表：</p>
+    <script>
+        axios({
+            url: 'https://hmajax.itheima.net/api/city',
+            params: {
+                pname: '福建省'
+            }
+        }).then(result => {
+            console.log(result.data.message);
+            result.data.list.forEach(element => {
+                const p = document.createElement('p')
+                p.innerText = element
+                p.className = 'city'
+                document.querySelector('.title').appendChild(p)
+            });
+        })
+    </script>
+</body>
+
+</html>
