@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05.常用请求方法和数据提交</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button type="submit" class="btn">注册</button>
+    <script>
+        /*
+            注册用户：https://hmajax.itheima.net/api/register
+            请求方法：POST
+            参数名：
+                username:用户名（中英文和数字组成，最少8位）
+                password:密码（最少6位）
+                
+            目标：点击按钮，通过axios提交用户和密码，完成注册
+        */
+        document.querySelector('.btn').addEventListener('click', () => {
+            axios({
+                url: 'https://hmajax.itheima.net/api/register',
+                // 指定请求方法
+                method: 'post',
+                // 提交数据
+                data: {
+                    username: 'lyx010327',
+                    password: 'lyx010327'
+                }
+            }).then(result => {
+                console.log(result);
+            })
+        })
+    </script>
+</body>
+
+</html>
