@@ -32,5 +32,5 @@
 需求：请求目标资源地址，拿到省份列表数据，显示到页面
 目标资源地址：*https://hmajax.itheima.net/api/province
 
-
+#axios
 下一篇：[[02-认识URL]]
